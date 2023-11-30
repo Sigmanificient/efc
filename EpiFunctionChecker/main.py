@@ -61,12 +61,12 @@ def run_analysis(bin_path: str, bf_path: str) -> None:
         print(f'{TEXT_RED}Found {len(a_list)} banned functions !{TEXT_CLEAR}')
         print(f'{TEXT_RED}Banned functions:{TEXT_CLEAR}')
         for bf_found in a_list:
-            print("-" + TEXT_RED + bf_found + TEXT_CLEAR)
+            print(f"-{TEXT_RED}{bf_found}{TEXT_CLEAR}")
         exit(1)
 
 
 def main():
-    if len(sys.argv) >= 2 and (sys.argv[1] == '-h' or sys.argv[1] == '--help'):
+    if len(sys.argv) >= 2 and sys.argv[1] in ['-h', '--help']:
         print_usage()
         exit(0)
     if not is_tool_present('nm'):
